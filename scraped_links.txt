@@ -1,0 +1,5 @@
+Education - portfolio/Education.html
+Achievements - portfolio/certificate.html
+Experience - portfolio/experience.html
+About Me - portfolio/about.html
+Download CV - files/11.Kishan_Goyani_Resume20240712 (3).pdf
