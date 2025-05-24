@@ -6,54 +6,69 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kishan Goyani | Portfolio</title>
 
+  <!-- External CSS -->
   <link rel="stylesheet" href="layout_style/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
 
-<script>
-  function checkPasscode() {
-    const input = document.getElementById("passcode-input").value;
-    const correctPasscode = "7630"; // Change to your passcode
+  <!-- Profile & Navigation -->
+  <main>
+    <img src="images/profile.webp" alt="Kishan Goyani Profile Photo" class="profile-pic" loading="lazy" width="200" height="200" />
+    <h1>Hello, I'm Kishan Goyani</h1>
+    <h2>Database Administrator | Data Analyst | BI Developer</h2>
 
-    if (input === correctPasscode) {
-      sessionStorage.setItem("authenticated", "true");
-      hideOverlay();
-    } else {
-      document.getElementById("passcode-error").textContent = "Incorrect passcode.";
+    <div class="btn-group">
+      <a href="portfolio/Education.html">Education</a>
+      <a href="portfolio/certificate.html">Achievements</a>
+      <a href="portfolio/experience.html">Experience</a>
+      <a href="portfolio/about.html">About Me</a>
+      <a href="files/11.Kishan_Goyani_Resume20240712 (3).pdf" download class="download-btn">
+        <i class="fas fa-download"></i> Download CV
+      </a>
+    </div>
+  </main>
+
+  <!-- Passcode overlay -->
+  <div id="passcode-screen">
+    <h2>Access to this portfolio is restricted. A passcode is required.</h2>
+    <input type="password" id="passcode-input" placeholder="Enter passcode" />
+    <button onclick="checkPasscode()">Submit</button>
+    <div id="passcode-error"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Kishan Goyani. All rights reserved.
+  </footer>
+
+  <!-- Script -->
+  <script>
+    function checkPasscode() {
+      const input = document.getElementById("passcode-input").value;
+      const correctPasscode = "7630";
+
+      if (input === correctPasscode) {
+        sessionStorage.setItem("authenticated", "true");
+        hideOverlay();
+      } else {
+        document.getElementById("passcode-error").textContent = "Incorrect passcode.";
+      }
     }
-  }
 
-  function hideOverlay() {
-    document.body.classList.remove('locked');
-    document.getElementById("passcode-screen").style.display = "none";
-    document.getElementById("passcode-error").textContent = "";
-  }
-
-  function showOverlay() {
-    document.body.classList.add('locked');
-    document.getElementById("passcode-screen").style.display = "block";
-  }
-
-  function checkAuthentication() {
-    if (sessionStorage.getItem("authenticated") === "true") {
-      hideOverlay();
-    } else {
-      showOverlay();
+    function hideOverlay() {
+      document.body.classList.remove('locked');
+      document.getElementById("passcode-screen").style.display = "none";
+      document.getElementById("passcode-error").textContent = "";
     }
 
-    const profilePic = document.querySelector('.profile-pic');
-    if (profilePic.complete) {
-      profilePic.classList.add('loaded');
-    } else {
-      profilePic.addEventListener('load', () => {
-        profilePic.classList.add('loaded');
-      });
+    function showOverlay() {
+      document.body.classList.add('locked');
+      document.getElementById("passcode-screen").style.display = "block";
     }
-  }
 
-  window.addEventListener('DOMContentLoaded', () => {
+   window.addEventListener('DOMContentLoaded', () => {
     if (sessionStorage.getItem("authenticated") === "true") {
       document.body.classList.remove('locked');
       document.getElementById("passcode-screen").style.display = "none";
@@ -76,37 +91,7 @@
       });
     }
   });
-
-</script>
-
-  <main>
-    <img src="images/profile.webp" alt="Kishan Goyani Profile Photo" class="profile-pic" loading="lazy" width="200" height="200" />
-    <h1>Hello, I'm Kishan Goyani</h1>
-    <h2>Database Administrator | Data Analyst | BI Developer</h2>
-
-    <div class="btn-group">
-      <a href="portfolio/Education.html">Education</a>
-      <a href="portfolio/certificate.html">Achievements</a>
-      <a href="portfolio/experience.html">Experience</a>
-      <a href="portfolio/about.html">About Me</a>
-      <a href="files/11.Kishan_Goyani_Resume20240712 (3).pdf" download class="download-btn">
-        <i class="fas fa-download"></i> Download CV
-      </a>
-    </div>
-  </main>
-
-    <!-- Passcode overlay -->
-  <div id="passcode-screen">
-    <h2>Access to this portfolio is restricted. A passcode is required.</h2>
-    <input type="password" id="passcode-input" placeholder="Enter passcode" />
-    <button onclick="checkPasscode()">Submit</button>
-    <div id="passcode-error"></div>
-  </div>
-
-  <footer>
-    &copy; 2025 Kishan Goyani. All rights reserved.
-  </footer>
-
+  </script>
 
 </body>
 
