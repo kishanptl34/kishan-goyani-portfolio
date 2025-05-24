@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me - Kishan Goyani</title>
+  <link rel="stylesheet" href="../layout_style/st_about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body class="locked">
+<!-- First need to visit index.html -->
+<script>
+  if (sessionStorage.getItem("authenticated") !== "true") {
+    // Not authenticated? Redirect immediately:
+    window.location.href = '/index.html'; // adjust path as needed
+  } else {
+    // Authenticated? Show the page content:
+    document.body.classList.remove('locked');
+  }
+</script>
+
+  <main class="about-container">
+    
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <img src="../images/Profile.PNG" alt="Kishan's Profile Picture" class="profile-img" />
+      <div class="bio">
+        <h1>About Me</h1>
+        <p>
+          Hello! I'm <strong>Kishan Goyani</strong>, a passionate and detail-oriented 
+          <strong>Database Administrator</strong>, <strong>Data Analyst</strong>, and <strong>BI Developer</strong> 
+          with a background in Computer Science and a love for turning raw data into meaningful insights.
+        </p>
+        <p>
+          I enjoy working with SQL, Power BI, and data visualization tools to solve real-world business problems. 
+          I believe that data is not just numbers—it's a story waiting to be told.
+        </p>
+      </div>
+    </section>
+
+    <!-- Quick Facts -->
+    <section class="facts">
+      <h2>Quick Facts</h2>
+      <ul>
+        <li><i class="fas fa-map-marker-alt"></i> Edna, Greater Sudbury, ON P3C 4R3, Canada</li>
+        <li><i class="fas fa-code"> </i> Loves SQL, Python & BI Tools</li>
+        <li><i class="fas fa-music"></i> Enjoys Music & Movies</li>
+        <li><i class="fas fa-brain"></i> Always curious to learn new tech</li>
+      </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <h2>Contact Information</h2>
+      <ul class="contact-list">
+        <li><i class="fas fa-envelope"></i> <a href="mailto:kishankumar1201goyani@gmail.com">kishankumar1201goyani@gmail.com</a></li>
+        <li><i class="fas fa-phone-alt"></i> <a href="tel:+1 (705) 280 8658">+1 (705) 280 8658</a></li>
+        <li><i class="fab fa-linkedin"></i> 
+          <a href="https://www.linkedin.com/in/kishan-goyani-520a9a126/" target="_blank">linkedin.com/in/kishangoyani</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Back link -->
+    <a href="../index.html" class="back-link">← Back to Main</a>
+
+  </main>
+
+  <footer>
+    &copy; 2025 Kishan Goyani. All rights reserved.
+  </footer>
+
+<!-- Page Transition -->
+  <script>
+    // Page fade-in on load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+
+    // Fade-out on link click (except download links)
+    document.querySelectorAll('a').forEach(link => {
+      if (!link.hasAttribute('download')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const href = this.getAttribute('href');
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500); // Matches transition time
+        });
+      }
+    });
+  </script>
+</body>
+</html>

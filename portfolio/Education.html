@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Education - Kishan Goyani Portfolio</title>
+  <link rel="stylesheet" href="../layout_style/st_edu.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="locked">
+  <!-- First need to visit index.html -->
+<script>
+  if (sessionStorage.getItem("authenticated") !== "true") {
+    // Not authenticated? Redirect immediately:
+    window.location.href = '/index.html'; // adjust path as needed
+  } else {
+    // Authenticated? Show the page content:
+    document.body.classList.remove('locked');
+  }
+</script>
+
+  <main>
+    <h1>Education History</h1>
+
+  
+    <div class="timeline">
+      <!-- Business Analytics -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fa-solid fa-certificate"></i></div>   
+        <!-- <i class="fas fa-file-certificate"></i> -->
+        <div class="timeline-content">
+          <h3>Business Analytics - BAPG</h3>
+          <p>Cambrian College | College of Applied Arts and Technology<br>
+             <strong>Year:</strong> 2025 - Current<br>
+             <strong>Last Result:</strong> 4 GPA
+          </p>
+        </div>
+      </div>
+
+      <!-- B.E./B.Tech -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="timeline-content">
+          <h3>B.E./B.Tech in Computer Science</h3>
+          <p>B.H. Gardi College of Engineering & Technology (GTU)<br>
+             <strong>Year:</strong> 2015 - 2019<br>
+             <strong>Result:</strong> 7.10 CGPA
+          </p>
+        </div>
+      </div>
+
+      <!-- H.S.C.E. -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fas fa-school"></i></div>
+        <div class="timeline-content">
+          <h3>H.S.C.E. (Higher Secondary)</h3>
+          <p>G.H.S.E.B. - Gandhinagar<br>
+             <strong>Year:</strong> 2015<br>
+             <strong>Percentage:</strong> 60.76%
+          </p>
+        </div>
+      </div>
+
+      <!-- S.S.C.E. -->
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fas fa-book-open"></i></div>
+        <div class="timeline-content">
+          <h3>S.S.C.E. (Secondary School)</h3>
+          <p>G.S.E.B. - Gandhinagar<br>
+             <strong>Year:</strong> 2013<br>
+             <strong>Percentage:</strong> 76.83%
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <a href="../index.html">← Back to Main</a>
+  </main>
+
+  <footer>
+    &copy; 2025 Kishan Goyani. All rights reserved.
+  </footer>
+  
+<!-- Page Transition -->
+  <script>
+    // Page fade-in on load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+
+    // Fade-out on link click (except download links)
+    document.querySelectorAll('a').forEach(link => {
+      if (!link.hasAttribute('download')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const href = this.getAttribute('href');
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500); // Matches transition time
+        });
+      }
+    });
+  </script>
+  <script>
+  if (sessionStorage.getItem("authenticated") !== "true") {
+    window.location.href = "../index.html"; // Redirect to passcode page
+  }
+</script>
+
+</body>
+</html>

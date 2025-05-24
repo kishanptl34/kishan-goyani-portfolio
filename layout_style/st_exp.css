@@ -1,0 +1,124 @@
+/* Base Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f4f8;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Fade-in and fade-out effects */
+body.fade-in {
+  opacity: 1;
+}
+
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+body {
+  /* Background image with a light overlay for soft effect */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+    url('../images/exp.jpg'); /* Make sure path is correct */
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 40px;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  border-left: 4px solid #2980b9;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  padding-left: 30px;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -22px;
+  top: 0;
+  background: #2980b9;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  color: #2980b9;
+  font-size: 20px;
+}
+
+.timeline-content p {
+  margin-top: 5px;
+  line-height: 1.6;
+}
+
+/* Skills Section */
+.skills-section {
+  margin-top: 60px;
+}
+
+.skills-section h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* Chart.js canvas styling */
+canvas#skillsChart {
+  width: 100% !important;
+  max-width: 900px;
+  margin: 40px auto;
+  display: block;
+}
+
+/* Footer & Link */
+a {
+  display: block;
+  margin-top: 40px;
+  text-align: center;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9em;
+  color: #777;
+}

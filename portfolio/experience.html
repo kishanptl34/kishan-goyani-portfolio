@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Experience - Kishan Goyani Portfolio</title>
+  <link rel="stylesheet" href="../layout_style/st_exp.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    canvas#skillsChart {
+      width: 100% !important;
+      max-width: 900px;
+      margin: 40px auto;
+      display: block;
+    }
+  </style>
+</head>
+<body class="locked">
+   <!-- First need to visit index.html -->
+<script>
+  if (sessionStorage.getItem("authenticated") !== "true") {
+    // Not authenticated? Redirect immediately:
+    window.location.href = '/index.html'; // adjust path as needed
+  } else {
+    // Authenticated? Show the page content:
+    document.body.classList.remove('locked');
+  }
+</script>
+  <main>
+    <h1>Professional Experience</h1>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fas fa-database"></i></div>
+        <div class="timeline-content">
+          <h3>Database Administrator</h3>
+          <p><strong>Technithunder</strong> — Ahmedabad, IN<br /><strong>Mar 2023 – Nov 2024</strong></p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="timeline-content">
+          <h3>Junior Database Developer</h3>
+          <p><strong>Probus Insurance Broker Pvt Ltd</strong> — Ahmedabad, IN<br /><strong>Mar 2022 – Feb 2023</strong></p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fas fa-code"></i></div>
+        <div class="timeline-content">
+          <h3>Junior Software Engineer</h3>
+          <p><strong>Technithunder</strong> — Ahmedabad, IN<br /><strong>Apr 2020 – Jan 2022</strong></p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-icon"><i class="fas fa-user-graduate"></i></div>
+        <div class="timeline-content">
+          <h3>SQL / Python Developer Intern</h3>
+          <p><strong>Technithunder</strong> — Ahmedabad, IN<br /><strong>Sep 2019 – Mar 2020</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <section class="skills-section">
+      <h1>Professional Skills</h1>
+      <canvas id="skillsChart"></canvas>
+    </section>
+
+    <a href="../index.html">← Back to Main</a>
+  </main>
+
+  <footer>
+    &copy; 2025 Kishan Goyani. All rights reserved.
+  </footer>
+
+  <script>
+    const ctx = document.getElementById('skillsChart').getContext('2d');
+    const skillsChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          'Python', 'MySQL', 'Excel', 'Word', 'SQL Server', 'Workbench',
+          'pgAdmin', 'VS Code', 'JIRA', 'Power BI', 'Tableau', 'PL/SQL',
+          'MongoDB', 'SSIS', 'SSRS', 'SSAS', 'BIRT', 'JasperSoft', 'PostgreSQL',
+          'AWS', 'ETL', 'Postman', 'Cypress', 'T-SQL'
+        ],
+        datasets: [{
+          label: 'Skill Level (%)',
+          data: [
+            95, 90, 90, 90, 85, 85,
+            85, 85, 85, 80, 80, 80,
+            80, 75, 75, 75, 75, 75, 85,
+            70, 70, 70, 70, 75
+          ],
+          backgroundColor: '#2980b9',
+          borderColor: '#1c5980',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          title: {
+            display: true,
+            text: 'Professional Skills Proficiency'
+          },
+          legend: {
+            display: false
+          }
+        },
+        scales: {
+          x: {
+            ticks: {
+              autoSkip: false,
+              maxRotation: 90,
+              minRotation: 45
+            }
+          },
+          y: {
+            beginAtZero: true,
+            max: 100,
+            ticks: {
+              stepSize: 10
+            }
+          }
+        }
+      }
+    });
+
+    // Page fade-in on load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+
+    // Fade-out on link click (except download links)
+    document.querySelectorAll('a').forEach(link => {
+      if (!link.hasAttribute('download')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const href = this.getAttribute('href');
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 500);
+        });
+      }
+    });
+  </script>
+  <script>
+  if (sessionStorage.getItem("authenticated") !== "true") {
+    window.location.href = "../index.html"; // Redirect to passcode page
+  }
+</script>
+</body>
+</html>
